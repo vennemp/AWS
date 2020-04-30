@@ -16,9 +16,11 @@ else
                         GroupID = $sg.GroupId;
                         GroupName = $sg.GroupName;
                         Port = $rule.ToPort
-                        Source = $cidr.CidrIp
-                        Description = $cidr.Description
+                        SourceCidr = $cidr.CidrIp
+                        CidrSourceDescription = $cidr.Description
                         InUse = $InUse
+                        SourceSG = $rule.UserIdGroupPairs.groupid
+                        SGSourceDescription = $rule.UserIdGroupPairs.description
 
                     }
                 }
@@ -28,9 +30,11 @@ else
                         GroupID = $sg.GroupId;
                         GroupName = $sg.GroupName;
                         Port = $rule.fromPort.ToString() + "-" + $rule.ToPort.ToString()
-                        Source = $cidr.CidrIp
-                        Description = $cidr.Description
+                        SourceCidr = $cidr.CidrIp
+                        CidrSourceDescription = $cidr.Description
                         InUse = $InUse
+                        SourceSG = $rule.UserIdGroupPairs.groupid
+                        SGSourceDescription = $rule.UserIdGroupPairs.description
 
                     }
                 }
